@@ -14,16 +14,11 @@ namespace KodBot.Core.LevelingSystem
             var userAccount = UserAccounts.UserAccounts.GetAccount(user);
 
             userAccount.Nick = user.Username;
-            char[] sep = { ',' };
+            char[] sep = { ' ' };
             IMessage msg = await message.Channel.GetMessageAsync(message.Id);
             string[] msgArray = msg.ToString().Split(sep);
-
-            List<string> holy = new List<string>();
-            holy.Add("god");
-            holy.Add("dio");
-            holy.Add("jesus");
-            holy.Add("gesù");
-            holy.Add("gesu");
+            
+            List<string> holy = new List<string>() { "god","dio","jesus","gesù","gesu","madonna"};
 
             foreach (string word in msgArray)
             {
